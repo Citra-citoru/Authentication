@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "CourseContext"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "UserContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "LessonContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "WatchLogContext"
+    },
+    "mssql5": {
+      "type": "mssql",
+      "connectionId": "SectionContext"
+    },
+    "mssql6": {
+      "type": "mssql",
+      "connectionId": "authApiContext"
+    }
+  }
+}

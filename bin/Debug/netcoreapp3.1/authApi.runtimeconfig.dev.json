@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\citra\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\citra\\.nuget\\packages"
+    ]
+  }
+}
