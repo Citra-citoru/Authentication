@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "980b6730-0895-4dea-a72c-686befbdfbfd",
+		"name": "Net_Auth",
+		"description": "The Postman Collection for TopCoder .Net Challenge \r\nhttps://www.topcoder.com/challenges/e6cf6165-226c-4d49-9ba8-be395c928dc4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test\",\r\n    \"email\":\"test@email.com\",\r\n    \"fullName\":\"test test\",\r\n    \"isVerified\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Registers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Registers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\",function(){\r",
+							"    pm.response.to.have.status(200);;\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test3@email.com\",\r\n    \"password\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/8dcdbc71-a627-45c7-8d3a-08d93e254c93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"8dcdbc71-a627-45c7-8d3a-08d93e254c93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCourse",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"MongoDB Basic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/courses/e780185e-e846-44e8-ae0b-08d93e2a4b25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"courses",
+						"e780185e-e846-44e8-ae0b-08d93e2a4b25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createSection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"section 1\",\r\n    \"order\":1,\r\n    \"courseId\":\"e780185e-e846-44e8-ae0b-08d93e2a4b25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSections",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code should be 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLessons",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code should be 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44347/api/lessons",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44347",
+					"path": [
+						"api",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLesson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms which is \"+pm.response.responseTime, () => {\r",
+							" pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"How To Setup Mongodb\",\r\n    \"videoUrl\":\"https://www.topcoder.com/challenges/e6cf6165-226c-4d49-9ba8-be395c928dc4\",\r\n    \"order\":1,\r\n    \"sectionId\":\"02799351-8a11-4d51-77ce-08d93e2bacfe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/lessons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -37,8 +37,12 @@ $ cd AuthApi
 $ add-Migration initial				#create migration script
 $ update_database
 ```
-**Step 3**. Build the database
+**Step 3**. Install and run newman for postman collection 
 
+```shell
+$ npm install -g newman				#install newman with npm
+$ newman run postman_collection.json	#run newman
+```
 ### Swagger
 
-https://localhost:44347/swagger/index.html
+http://localhost:5000/swagger/index.html
